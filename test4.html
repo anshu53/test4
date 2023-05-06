@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input1" type="text" placeholder="value1" />
+    <input id="opt" type="text" placeholder="+,-,*,/" />
+    <input id="input2" type="text" placeholder="value2" />
+    <p id="result"></p>
+    <button id="btn">submit</button>
+  </body>
+  <script>
+    var btn = document.getElementById("btn");
+    var a = document.getElementById("input1");
+    var b = document.getElementById("input2");
+    var c = document.getElementById("opt");
+    function calcy() {
+      var input1 = Number(document.getElementById("input1").value);
+      var input2 = Number(document.getElementById("input2").value);
+      var opt = document.getElementById("opt").value;
+      if (opt === "+") {
+        document.getElementById("result").innerHTML = input1 + input2;
+      } else if (opt === "-") {
+        document.getElementById("result").innerHTML = input1 - input2;
+      } else if (opt == "*") {
+        document.getElementById("result").innerHTML = input1 * input2;
+      } else if (opt == "/") {
+        document.getElementById("result").innerHTML = input1 / input2;
+      } else {
+        document.getElementById("result").innerHTML =
+          "Please choose correct operands";
+      }
+      a.value = "";
+      b.value = "";
+      c.value = "";
+    }
+    btn.addEventListener("click", calcy);
+  </script>
+</html>
